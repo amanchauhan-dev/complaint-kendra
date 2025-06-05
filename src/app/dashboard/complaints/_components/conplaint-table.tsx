@@ -61,22 +61,6 @@ function ComaplaintsTable() {
             alignment: "center"
         },
         {
-            header: "Attachments", accessor: "attachments", render: (_, row) => {
-
-                return (
-                    <div>
-                        {row.attachments ? row.attachments?.length > 0 && row.attachments.map(item => {
-                            return <Badge key={item.attachment_id} variant={'outline'}>{item.type}</Badge>
-                        })
-                            :
-                            <Badge variant={'outline'}>None</Badge>
-                        }
-                    </div>
-                )
-            },
-            alignment: "center"
-        },
-        {
             header: "Created At",
             accessor: "created_at",
             render: (value: string) => <span className="capitalize">{format(new Date(value), "dd MMMM yyyy")}</span>,

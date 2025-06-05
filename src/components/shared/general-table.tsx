@@ -49,7 +49,7 @@ export function GeneralTable<T extends { [key: string]: any }>({
     const totalColSpan = useCallback(() => {
         let count = columns.length + 1;
         columns.forEach(e => {
-            if (e.colSpan && e.colSpan >= 2) count++
+            if (e.colSpan && e.colSpan >= 2) { count++ }
         })
         return count;
     }, [columns])()
