@@ -1,0 +1,162 @@
+[
+    {
+        "gender": "male",
+        "full_name": "Aman Chauhan",
+        "email": "aman@gmail.com",
+        "role": "superadmin",
+        "password": "StrongPass1@",
+        "contact_number": "9876543210",
+        "date_of_birth": "1994-05-21",
+        "profile_picture": null,
+        "aadhaar_number": "123456789012",
+        "address": {
+            "full_address": "101 Ashram Road, Ahmedabad",
+            "taluka_id": "2cefede1-3f59-4ad1-b004-9f583d9f863e"
+        },
+        "user_id": "b4a00185-f836-42a1-900b-35ac11ad3d12"
+    },
+    {
+        "gender": "female",
+        "full_name": "Priya Sharma",
+        "email": "priya.sharma@example.com",
+        "role": "citizen",
+        "password": "StrongPass2@",
+        "contact_number": "8765432109",
+        "date_of_birth": "1992-09-12",
+        "profile_picture": null,
+        "aadhaar_number": "123456789013",
+        "address": {
+            "full_address": "402 Satellite Road, Surat",
+            "taluka_id": "b1c2781a-2262-4f63-8dcc-6bdce175c9f4"
+        },
+        "user_id": "68164816-333c-417d-b4eb-b9f41d88073a"
+    },
+    {
+        "gender": "other",
+        "full_name": "Aryan Singh",
+        "email": "aryan.singh@example.com",
+        "role": "citizen",
+        "password": "StrongPass3@",
+        "contact_number": "7654321098",
+        "date_of_birth": "1990-03-08",
+        "profile_picture": null,
+        "aadhaar_number": "123456789014",
+        "address": {
+            "full_address": "17 Civil Lines, Vadodara",
+            "taluka_id": "802a88a8-92bd-4d66-8481-eddfb1d0efb7"
+        },
+        "user_id": "616c8f59-46fd-4c79-83be-8ffd294b4292"
+    },
+    {
+        "gender": "male",
+        "full_name": "Mohit Desai",
+        "email": "mohit.desai@example.com",
+        "role": "citizen",
+        "password": "StrongPass4@",
+        "contact_number": "6543210987",
+        "date_of_birth": "1988-07-19",
+        "profile_picture": null,
+        "aadhaar_number": "123456789015",
+        "address": {
+            "full_address": "51 City Light, Valsad",
+            "taluka_id": "8ca04000-5b54-4f3a-9a31-4ee4fdde032a"
+        },
+        "user_id": "d0a90168-96c9-4ff8-8ce6-3f24afcdc4c8"
+    },
+    {
+        "gender": "female",
+        "full_name": "Sneha Mehta",
+        "email": "sneha.mehta@example.com",
+        "role": "citizen",
+        "password": "StrongPass5@",
+        "contact_number": "9123456789",
+        "date_of_birth": "1993-11-22",
+        "profile_picture": null,
+        "aadhaar_number": "123456789016",
+        "address": {
+            "full_address": "98 Mandvi Bazar, Valsad",
+            "taluka_id": "8ca04000-5b54-4f3a-9a31-4ee4fdde032a"
+        },
+        "user_id": "41248646-541e-4f72-aa19-8c9212829bb2"
+    },
+    {
+        "gender": "male",
+        "full_name": "Karan Joshi",
+        "email": "karan.joshi@example.com",
+        "role": "citizen",
+        "password": "StrongPass6@",
+        "contact_number": "9988776655",
+        "date_of_birth": "1991-06-01",
+        "profile_picture": null,
+        "aadhaar_number": "123456789017",
+        "address": {
+            "full_address": "Sector 14, Ahmedabad",
+            "taluka_id": "2cefede1-3f59-4ad1-b004-9f583d9f863e"
+        },
+        "user_id": "7088866d-3df2-40d6-897c-d69303576498"
+    },
+    {
+        "gender": "female",
+        "full_name": "Anjali Shah",
+        "email": "anjali.shah@example.com",
+        "role": "citizen",
+        "password": "StrongPass7@",
+        "contact_number": "9876541230",
+        "date_of_birth": "1990-08-17",
+        "profile_picture": null,
+        "aadhaar_number": "123456789018",
+        "address": {
+            "full_address": "Nr. Law Garden, Ahmedabad",
+            "taluka_id": "2cefede1-3f59-4ad1-b004-9f583d9f863e"
+        },
+        "user_id": "2e46b957-0e86-4ba5-96a1-2f724d378e4a"
+    },
+    {
+        "gender": "other",
+        "full_name": "Rahul Kumar",
+        "email": "rahul.kumar@example.com",
+        "role": "citizen",
+        "password": "StrongPass8@",
+        "contact_number": "9871203456",
+        "date_of_birth": "1992-12-01",
+        "profile_picture": null,
+        "aadhaar_number": "123456789019",
+        "address": {
+            "full_address": "M G Road, Ahmedabad",
+            "taluka_id": "2cefede1-3f59-4ad1-b004-9f583d9f863e"
+        },
+        "user_id": "e7318d87-bb65-4b63-8988-49e7dc6a2ebe"
+    },
+    {
+        "gender": "male",
+        "full_name": "Nilesh Trivedi",
+        "email": "nilesh.trivedi@example.com",
+        "role": "citizen",
+        "password": "StrongPass9@",
+        "contact_number": "9988001122",
+        "date_of_birth": "1993-01-05",
+        "profile_picture": null,
+        "aadhaar_number": "123456789020",
+        "address": {
+            "full_address": "Station Road, Valsad",
+            "taluka_id": "8ca04000-5b54-4f3a-9a31-4ee4fdde032a"
+        },
+        "user_id": "d06c01b9-b8f8-4903-af42-c1af2d26be47"
+    },
+    {
+        "gender": "female",
+        "full_name": "Deepa Patel",
+        "email": "deepa.patel@example.com",
+        "role": "citizen",
+        "password": "StrongPass10@",
+        "contact_number": "9765432198",
+        "date_of_birth": "1987-10-30",
+        "profile_picture": null,
+        "aadhaar_number": "123456789021",
+        "address": {
+            "full_address": "Main Street, Rajkot",
+            "taluka_id": "b52aae8a-cd06-4279-8d57-79f72c18d29e"
+        },
+        "user_id": "abb0d236-56ed-4fa3-bef4-081d3b0f4afa"
+    }
+]

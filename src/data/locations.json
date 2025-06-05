@@ -1,0 +1,170 @@
+[
+    {
+        "districtName": "Ahmedabad",
+        "subDivisions": [
+            {
+                "subDivisionName": "Ahmedabad City",
+                "taluks": [
+                    {
+                        "talukName": "Ahmedabad City",
+                        "taluka_id": "2cefede1-3f59-4ad1-b004-9f583d9f863e"
+                    },
+                    {
+                        "talukName": "Daskroi",
+                        "taluka_id": "54b8f03c-b7f1-4119-aee4-ed78379d75d9"
+                    },
+                    {
+                        "talukName": "Sanand",
+                        "taluka_id": "543e05c5-09d3-49c5-9635-00aad6c55c64"
+                    }
+                ],
+                "subDivision_id": "0225023d-3445-46c8-8b23-ddcd6e99bed2"
+            },
+            {
+                "subDivisionName": "Ahmedabad Rural",
+                "taluks": [
+                    {
+                        "talukName": "Detroj-Rampura",
+                        "taluka_id": "ce7faef5-8de1-431e-9284-c6f2a200bb55"
+                    },
+                    {
+                        "talukName": "Viramgam",
+                        "taluka_id": "e5797576-eaf7-46a4-8206-d981bcffe89b"
+                    }
+                ],
+                "subDivision_id": "9d4c9562-d658-4fe6-bb61-3e7b5d73e13e"
+            }
+        ],
+        "district_id": "d2403be1-b5b4-4b5b-b0bf-673692fef430"
+    },
+    {
+        "districtName": "Surat",
+        "subDivisions": [
+            {
+                "subDivisionName": "Surat City",
+                "taluks": [
+                    {
+                        "talukName": "Surat City",
+                        "taluka_id": "b1c2781a-2262-4f63-8dcc-6bdce175c9f4"
+                    }
+                ],
+                "subDivision_id": "1f44c299-47c0-4de1-ae88-ebd84da0343d"
+            },
+            {
+                "subDivisionName": "Surat Rural",
+                "taluks": [
+                    {
+                        "talukName": "Choryasi",
+                        "taluka_id": "dcc74a52-11bf-4e17-813d-8a7542ff647c"
+                    },
+                    {
+                        "talukName": "Olpad",
+                        "taluka_id": "0445f72a-3bca-4dc5-9ff0-11542f301b1c"
+                    },
+                    {
+                        "talukName": "Bardoli",
+                        "taluka_id": "6da3cce4-268d-4fa7-aafc-35262e16f8c9"
+                    },
+                    {
+                        "talukName": "Mandvi",
+                        "taluka_id": "c3113359-4ad0-4e3d-b881-e209328f24ca"
+                    }
+                ],
+                "subDivision_id": "0ea381d3-a1c1-462a-8396-bbb2a37b25df"
+            }
+        ],
+        "district_id": "5d5c77f3-fe05-4186-b1bf-119bf5bcb36f"
+    },
+    {
+        "districtName": "Vadodara",
+        "subDivisions": [
+            {
+                "subDivisionName": "Vadodara Urban",
+                "taluks": [
+                    {
+                        "talukName": "Vadodara City",
+                        "taluka_id": "41445aed-fb83-4dc6-9fb7-41f1d372b377"
+                    },
+                    {
+                        "talukName": "Vadodara Rural",
+                        "taluka_id": "802a88a8-92bd-4d66-8481-eddfb1d0efb7"
+                    }
+                ],
+                "subDivision_id": "b53958e0-f185-443b-9886-64ab970553d5"
+            },
+            {
+                "subDivisionName": "Padra Division",
+                "taluks": [
+                    {
+                        "talukName": "Padra",
+                        "taluka_id": "7319b090-a60f-4347-a8ac-2af557542c61"
+                    },
+                    {
+                        "talukName": "Karjan",
+                        "taluka_id": "3f9fb938-9e20-47f1-af6e-c9545b6752d3"
+                    }
+                ],
+                "subDivision_id": "95cb58a7-3886-4ff7-917c-3660349e187a"
+            }
+        ],
+        "district_id": "476d9c39-23b7-48af-8a44-07bafd4c572e"
+    },
+    {
+        "districtName": "Rajkot",
+        "subDivisions": [
+            {
+                "subDivisionName": "Rajkot Division",
+                "taluks": [
+                    {
+                        "talukName": "Rajkot",
+                        "taluka_id": "b52aae8a-cd06-4279-8d57-79f72c18d29e"
+                    },
+                    {
+                        "talukName": "Kotda Sangani",
+                        "taluka_id": "c1279341-c70d-46c9-85de-68d3e59fb012"
+                    },
+                    {
+                        "talukName": "Lodhika",
+                        "taluka_id": "ae9b5fda-2ead-45d3-9625-2d01bb89e893"
+                    }
+                ],
+                "subDivision_id": "71cd3136-ce12-4947-97d4-3ccd4cddffb7"
+            }
+        ],
+        "district_id": "0691d1e5-7c48-4758-b187-be0d200d1cc4"
+    },
+    {
+        "districtName": "Valsad",
+        "subDivisions": [
+            {
+                "subDivisionName": "Valsad",
+                "taluks": [
+                    {
+                        "talukName": "Valsad",
+                        "taluka_id": "3d96ba59-73a6-4534-80d0-db03c71e3419"
+                    },
+                    {
+                        "talukName": "Dharampur",
+                        "taluka_id": "564b7104-0405-45cd-a67f-026d27868b73"
+                    }
+                ],
+                "subDivision_id": "7a627779-b7ca-4342-9d16-cfb51d0d69e3"
+            },
+            {
+                "subDivisionName": "Vapi",
+                "taluks": [
+                    {
+                        "talukName": "Vapi",
+                        "taluka_id": "8ca04000-5b54-4f3a-9a31-4ee4fdde032a"
+                    },
+                    {
+                        "talukName": "Pardi",
+                        "taluka_id": "77fdacc9-8933-4038-a159-52c5189cd6c0"
+                    }
+                ],
+                "subDivision_id": "9c8dd471-2c6c-4649-a0f0-b62343b4dd2a"
+            }
+        ],
+        "district_id": "766f6c7f-c1f0-45fd-82fc-0ddb03f536c8"
+    }
+]

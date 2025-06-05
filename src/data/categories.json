@@ -1,0 +1,314 @@
+[
+    {
+        "name": "Education",
+        "subCategory": [
+            {
+                "name": "Teacher absenteeism",
+                "subId": "01059951-de68-478e-9b33-4287f42f3d02"
+            },
+            {
+                "name": "Lack of infrastructure",
+                "subId": "23f46b1a-ba38-4b7b-af05-16e9561c86d5"
+            },
+            {
+                "name": "Midday meal issues",
+                "subId": "152dd04d-a9ba-497d-92f1-f9c908b31e05"
+            },
+            {
+                "name": "Scholarship disbursal delays",
+                "subId": "4673893d-b93b-4561-96ca-d6c8a7d02b49"
+            },
+            {
+                "name": "School registration issues",
+                "subId": "be66606f-3f14-40b5-ac30-b31dcd3d32d4"
+            }
+        ],
+        "category_id": "5e7a3773-9ad3-4c5b-8a20-383b78f9fd72"
+    },
+    {
+        "name": "Civic Amenities",
+        "subCategory": [
+            {
+                "name": "Water supply issues",
+                "subId": "453aa306-2879-4b47-a993-a2c11090606d"
+            },
+            {
+                "name": "Blocked drainage",
+                "subId": "2bf6a825-9b74-4985-a2c5-694021ccf743"
+            },
+            {
+                "name": "Street light malfunction",
+                "subId": "cf2e5f4c-6c56-4887-bea6-913fba308635"
+            },
+            {
+                "name": "Road damage or potholes",
+                "subId": "3cb531bb-03f7-4072-bc99-795ef2bcbb2d"
+            },
+            {
+                "name": "Garbage not collected",
+                "subId": "7fdd6a79-d060-4603-a0bf-64799a765576"
+            }
+        ],
+        "category_id": "d3d27fd8-9c02-4609-a68d-b104073b9b85"
+    },
+    {
+        "name": "Health & Sanitation",
+        "subCategory": [
+            {
+                "name": "Government hospital negligence",
+                "subId": "51e4eb15-cc22-4e11-8ea3-49e6b4e37836"
+            },
+            {
+                "name": "Lack of medicines",
+                "subId": "5821ab8a-1d7d-456f-8c9c-b33451b734e4"
+            },
+            {
+                "name": "Unclean public toilets",
+                "subId": "ce4f3b55-3451-46ba-b1e5-ee8eb6cd5f99"
+            },
+            {
+                "name": "Overflowing garbage bins",
+                "subId": "884be88d-7270-493d-b0ee-6289e073e351"
+            },
+            {
+                "name": "No fogging in mosquito season",
+                "subId": "ef326bed-c26b-40df-8459-146fcbe17d39"
+            }
+        ],
+        "category_id": "cca1f0ac-3869-4a48-a6d0-5a90ac7fb32f"
+    },
+    {
+        "name": "Electricity",
+        "subCategory": [
+            {
+                "name": "Power outage",
+                "subId": "0040b47c-00a3-4012-b2f6-b75be6c9c9b1"
+            },
+            {
+                "name": "Overbilling or wrong bill",
+                "subId": "f854d96c-3ac2-4607-8b17-8f64827e009c"
+            },
+            {
+                "name": "Faulty meter",
+                "subId": "2f557ce0-8d0d-4129-8872-0f21668077e4"
+            },
+            {
+                "name": "Low voltage",
+                "subId": "f5d9d8be-0ad8-4c92-8411-1b2fd6ccd141"
+            },
+            {
+                "name": "Dangerous open wiring",
+                "subId": "8ba39ab7-0b28-4bee-97a5-80694ceef95f"
+            }
+        ],
+        "category_id": "bb8c1ba9-ea05-4c3c-b383-7004905f7ede"
+    },
+    {
+        "name": "Police & Law Enforcement",
+        "subCategory": [
+            {
+                "name": "FIR not registered",
+                "subId": "d2c1e875-b029-400a-b56e-fd9af38874a3"
+            },
+            {
+                "name": "Police misbehavior",
+                "subId": "bcd8c91f-7c68-44fe-b59c-18b74a3d2fa4"
+            },
+            {
+                "name": "Bribe demand",
+                "subId": "989d6ef5-6fa5-4d3a-b629-9633e601b72c"
+            },
+            {
+                "name": "No action on complaint",
+                "subId": "164a001d-e753-4e2c-9af7-18ab51c2a23b"
+            },
+            {
+                "name": "Unauthorized detention",
+                "subId": "58f2e70d-b299-430d-af8c-53ede7af229d"
+            }
+        ],
+        "category_id": "616606a6-a5be-400d-b34b-0ddce310c010"
+    },
+    {
+        "name": "Transport & Roads",
+        "subCategory": [
+            {
+                "name": "Damaged roads",
+                "subId": "a57e6656-3fc1-4618-9ffc-3ff5d2c714cc"
+            },
+            {
+                "name": "Public bus delays",
+                "subId": "54886554-4eee-44d9-b671-0d2d4148084f"
+            },
+            {
+                "name": "Traffic signal not working",
+                "subId": "60493564-3c7c-49d2-baea-ca02c96e0536"
+            },
+            {
+                "name": "Illegal parking",
+                "subId": "1a004859-d6c7-4ff4-88c0-78b91e57f141"
+            },
+            {
+                "name": "Encroachment on road",
+                "subId": "881b83a9-9c4a-4e1c-8983-c4df704d1a52"
+            }
+        ],
+        "category_id": "3a92da58-6681-4fb5-b1df-20d07775f5aa"
+    },
+    {
+        "name": "Revenue & Land Records",
+        "subCategory": [
+            {
+                "name": "Land ownership dispute",
+                "subId": "c0a1bd8b-9a3b-4875-a9d0-fdbecaaf847d"
+            },
+            {
+                "name": "Delayed mutation entry",
+                "subId": "9ba340fa-d594-4d18-b20d-15e3ecf94170"
+            },
+            {
+                "name": "Incorrect land measurement",
+                "subId": "1e757e99-2985-4453-b8a2-81ce26fada3b"
+            },
+            {
+                "name": "Encroachment complaint",
+                "subId": "8e73d416-7424-4967-9736-f87876a1026e"
+            },
+            {
+                "name": "Non-updated records",
+                "subId": "e85eec90-5598-46e6-aa7d-05889801c58f"
+            }
+        ],
+        "category_id": "d86d828f-380a-4b9c-9105-4254495c1b35"
+    },
+    {
+        "name": "Ration & Food",
+        "subCategory": [
+            {
+                "name": "No ration provided",
+                "subId": "c353281a-77be-4e2c-8dfb-71ef168ff25d"
+            },
+            {
+                "name": "Shopkeeper overcharging",
+                "subId": "082178b8-b328-4b14-91c2-f6ceddcaa1c2"
+            },
+            {
+                "name": "Corrupt distribution",
+                "subId": "c0809ab2-c288-4312-b5d0-40ce0234e934"
+            },
+            {
+                "name": "Wrong beneficiary details",
+                "subId": "b8ac643b-d5e4-4af4-9632-52070a9ed39e"
+            },
+            {
+                "name": "Expired stock distributed",
+                "subId": "6d5c6f97-349b-4589-87f1-843b56cf49aa"
+            }
+        ],
+        "category_id": "ed60974b-4f8b-44f9-afe2-96940b25c8fd"
+    },
+    {
+        "name": "Citizen ID & Documents",
+        "subCategory": [
+            {
+                "name": "Aadhaar card issues",
+                "subId": "058c483c-3c77-44a1-91b6-7ddf9d273ffd"
+            },
+            {
+                "name": "Delay in birth/death certificate",
+                "subId": "75f933c6-10cc-4dba-83b3-ff8c699ac0fb"
+            },
+            {
+                "name": "Wrong details on documents",
+                "subId": "1f78fa8e-428e-49e9-91b6-aa7b749de74f"
+            },
+            {
+                "name": "PAN linking problems",
+                "subId": "e658da90-8b99-465f-b785-357fdfeda734"
+            },
+            {
+                "name": "Domicile/caste certificate delay",
+                "subId": "0a3d0543-ccab-4e44-af5c-fedef840f2cf"
+            }
+        ],
+        "category_id": "9624b9f6-3f58-452d-8b0d-746e3ba3ae8f"
+    },
+    {
+        "name": "Digital Services",
+        "subCategory": [
+            {
+                "name": "Government portal not working",
+                "subId": "355ebba9-d56e-47f9-a965-799aa4957e65"
+            },
+            {
+                "name": "Application not tracking",
+                "subId": "774ad5a6-1148-40bc-b8fc-f8c82454d458"
+            },
+            {
+                "name": "OTP not received",
+                "subId": "03b5354c-c700-4a5b-b7b1-874ff226e02d"
+            },
+            {
+                "name": "Slow website response",
+                "subId": "7a435a92-af26-4d56-a165-8aaa8b50233c"
+            },
+            {
+                "name": "App crashing or freezing",
+                "subId": "09a79b85-73c0-4b04-847e-e38396da139a"
+            }
+        ],
+        "category_id": "4bfa51ed-6e66-4a4a-a4c4-a0f9facfa3d5"
+    },
+    {
+        "name": "Employment & Labor",
+        "subCategory": [
+            {
+                "name": "Job application issues",
+                "subId": "68ef91b9-a2cb-46a2-bdb4-96b48eb6bbef"
+            },
+            {
+                "name": "MNREGA wage delay",
+                "subId": "c40cec8f-bcdc-4916-ad91-25482198397d"
+            },
+            {
+                "name": "Worker harassment",
+                "subId": "225a0826-dfc2-47b2-8bc8-fb0cb2fd9397"
+            },
+            {
+                "name": "Contractor violation",
+                "subId": "ae5b169f-1bfa-41d3-bf67-5e82c2dee841"
+            },
+            {
+                "name": "Unfair dismissal",
+                "subId": "93422f61-e267-44df-8b2f-19885255a43a"
+            }
+        ],
+        "category_id": "4e860e23-1800-4186-9b41-1f92afcd0639"
+    },
+    {
+        "name": "Public Grievance / Government Office",
+        "subCategory": [
+            {
+                "name": "Staff misbehavior",
+                "subId": "ac5a8e95-7429-401d-a386-c9d49d978789"
+            },
+            {
+                "name": "Bribe request",
+                "subId": "d17d300b-beb1-4f2a-8def-a018f484f96e"
+            },
+            {
+                "name": "No response to query",
+                "subId": "6fab2eac-f40f-471e-8477-a32b72990ded"
+            },
+            {
+                "name": "Office closed during work hours",
+                "subId": "b85cc33f-0adb-4f8a-abbf-212aae0e04a5"
+            },
+            {
+                "name": "Delay in file processing",
+                "subId": "8ebae922-b51c-4320-926c-d474d4c7f9e3"
+            }
+        ],
+        "category_id": "44195a64-1ef6-4f43-8d68-1bda78311901"
+    }
+]

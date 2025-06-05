@@ -1,0 +1,198 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// generator zod {
+//   provider = "zod-prisma-types"
+//   output   = "../src/zod"
+// }
+
+enum Gender {
+  male
+  female
+  other
+}
+
+enum Status {
+  active
+  inactive
+}
+
+enum Role {
+  citizen
+  mamlatdar_office
+  sdm_office
+  collectorate_office
+  department_officer
+  admin
+  superadmin
+}
+
+enum JurisdictionLevel {
+  District
+  Subdivision
+  Taluka
+}
+
+enum ComplaintStatus {
+  PENDING
+  IN_PROGRESS
+  RESOLVED
+  REJECTED
+}
+
+enum AttachmentType {
+  IMAGE
+  PDF
+}
+
+//  TABLES
+
+model District {
+  district_id  String        @id @default(uuid())
+  name         String
+  created_at   DateTime      @default(now())
+  updated_at   DateTime      @default(now())
+  subdivisions Subdivision[]
+  Taluka       Taluka[]
+}
+
+model Subdivision {
+  subdivision_id String   @id @default(uuid())
+  district_id    String
+  name           String
+  created_at     DateTime @default(now())
+  updated_at     DateTime @default(now())
+  district       District @relation(fields: [district_id], references: [district_id], onDelete: Cascade)
+  talukas        Taluka[]
+}
+
+model Taluka {
+  taluka_id      String       @id @default(uuid())
+  subdivision_id String?
+  district_id    String
+  name           String
+  area_code      String
+  created_at     DateTime     @default(now())
+  updated_at     DateTime     @default(now())
+  district       District     @relation(fields: [district_id], references: [district_id], onDelete: Cascade)
+  subdivision    Subdivision? @relation(fields: [subdivision_id], references: [subdivision_id], onDelete: Cascade)
+  Address        Address[]
+}
+
+model User {
+  user_id         String      @id @default(uuid())
+  full_name       String
+  email           String      @unique
+  password        String
+  contact_number  String      @db.VarChar(20)
+  gender          Gender
+  date_of_birth   DateTime
+  profile_picture String?
+  aadhaar_number  String      @unique @db.VarChar(12)
+  status          Status      @default(active)
+  last_login      DateTime?
+  created_at      DateTime    @default(now())
+  updated_at      DateTime    @default(now())
+  role            Role        @default(citizen)
+  address_id      String?
+  address         Address?    @relation(fields: [address_id], references: [address_id], onDelete: SetNull)
+  officers        Officer[]
+  Complaint       Complaint[]
+}
+
+model Address {
+  address_id   String      @id @default(uuid())
+  full_address String      @db.VarChar(255)
+  created_at   DateTime    @default(now())
+  taluka_id    String
+  taluka       Taluka      @relation(fields: [taluka_id], references: [taluka_id], onDelete: Cascade)
+  updated_at   DateTime    @default(now())
+  users        User[]
+  complaints   Complaint[]
+}
+
+model Department {
+  department_id      String            @id @default(uuid())
+  name               String
+  jurisdiction_level JurisdictionLevel
+  jurisdiction_id    String
+  contact_person     String
+  contact_number     String?           @db.VarChar(20)
+  email              String            @unique
+  created_at         DateTime          @default(now())
+  updated_at         DateTime          @default(now())
+  officers           Officer[]
+  Complaint          Complaint[]
+}
+
+model Officer {
+  officer_id         String              @id @default(uuid())
+  user_id            String
+  designation        String
+  department_id      String
+  created_at         DateTime            @default(now())
+  updated_at         DateTime            @default(now())
+  user               User                @relation(fields: [user_id], references: [user_id], onDelete: Cascade)
+  department         Department          @relation(fields: [department_id], references: [department_id], onDelete: Cascade)
+  complaintResponses ComplaintResponse[]
+}
+
+model Category {
+  category_id String      @id @default(uuid())
+  name        String
+  parent_id   String?
+  created_at  DateTime    @default(now())
+  updated_at  DateTime    @default(now())
+  parent      Category?   @relation("Subcategories", fields: [parent_id], references: [category_id])
+  children    Category[]  @relation("Subcategories")
+  complaints  Complaint[]
+}
+
+model Complaint {
+  complaint_id  String              @id @default(uuid())
+  user_id       String
+  category_id   String?
+  department_id String?
+  title         String
+  description   String
+  status        ComplaintStatus     @default(PENDING)
+  address_id    String?
+  address       Address?            @relation(fields: [address_id], references: [address_id], onDelete: SetNull)
+  created_at    DateTime            @default(now())
+  updated_at    DateTime            @default(now())
+  user          User                @relation(fields: [user_id], references: [user_id], onDelete: Cascade)
+  category      Category?           @relation(fields: [category_id], references: [category_id], onDelete: SetNull)
+  department    Department?         @relation(fields: [department_id], references: [department_id], onDelete: Cascade)
+  responses     ComplaintResponse[]
+  attachments   Attachments[]
+}
+
+model ComplaintResponse {
+  response_id  String    @id @default(uuid())
+  complaint_id String
+  officer_id   String?
+  response     String
+  created_at   DateTime  @default(now())
+  complaint    Complaint @relation(fields: [complaint_id], references: [complaint_id], onDelete: Cascade)
+  officer      Officer?  @relation(fields: [officer_id], references: [officer_id], onDelete: SetNull)
+}
+
+model Attachments {
+  attachment_id String         @id @default(uuid())
+  url           String
+  type          AttachmentType
+  complaint_id  String
+  complaint     Complaint      @relation(fields: [complaint_id], references: [complaint_id], onDelete: Cascade)
+}
