@@ -116,55 +116,55 @@ export const deleteUsers = async () => {
 
 
 
+
 export const feedUsers = async () => {
     const NUMBER_OF_USERS = 500;
-    // const NUMBER_OF_COMPLAINTS = 10;
     const userIds: string[] = []
     try {
-        await prisma.$transaction(async (tx) => {
-            //   seed users
-            const usedEmails = new Set<string>();
-            const usedAadhaars = new Set<string>();
-            const hassedPassword = await bcrypt.hash("StrongPass1@", 10)
-            const usersArr = [{
-                user_id: "96de41ba-67ed-49d5-a534-dff36c802b34",
-                full_name: `Aman Chauhan`,
-                email: "aman@gmail.com",
-                role: 'superadmin' as RoleType,
-                profile_picture: '',
-                gender: "male" as GenderType,
+        //   seed users
+        const usedEmails = new Set<string>();
+        const usedAadhaars = new Set<string>();
+        const hassedPassword = await bcrypt.hash("StrongPass1@", 10)
+        const usersArr = [{
+            user_id: "96de41ba-67ed-49d5-a534-dff36c802b34",
+            full_name: `Aman Chauhan`,
+            email: "aman@gmail.com",
+            role: 'superadmin' as RoleType,
+            profile_picture: '',
+            gender: "male" as GenderType,
+            password: hassedPassword,
+            contact_number: faker.string.numeric({ length: 10 }),
+            date_of_birth: faker.date.past({ years: 20 }),
+            aadhaar_number: '12345678912',
+            address: addresseess[Math.floor(Math.random() * addresseess.length)],
+        }];
+        // create fake users
+        while (usersArr.length < NUMBER_OF_USERS) {
+            const fname = faker.person.firstName();
+            const lname = faker.person.lastName();
+            const email = faker.internet.email({ firstName: fname, lastName: lname }).toLocaleLowerCase();
+            const aadhaar = faker.string.numeric({ length: 12, allowLeadingZeros: false });
+            // ensure uniqueness
+            if (usedEmails.has(email) || usedAadhaars.has(aadhaar)) { continue }
+            const id = generateUniqueUUID()
+            userIds.push(id)
+            usedEmails.add(email);
+            usedAadhaars.add(aadhaar);
+            usersArr.push({
+                user_id: id,
+                full_name: `${fname} ${lname}`,
+                email,
+                gender: genders[Math.floor(Math.random() * genders.length)] as GenderType,
+                role: 'citizen' as RoleType,
                 password: hassedPassword,
                 contact_number: faker.string.numeric({ length: 10 }),
                 date_of_birth: faker.date.past({ years: 20 }),
-                aadhaar_number: '12345678912',
+                profile_picture: faker.image.avatar(),
+                aadhaar_number: aadhaar,
                 address: addresseess[Math.floor(Math.random() * addresseess.length)],
-            }];
-            // create fake users
-            while (usersArr.length < NUMBER_OF_USERS) {
-                const fname = faker.person.firstName();
-                const lname = faker.person.lastName();
-                const email = faker.internet.email({ firstName: fname, lastName: lname }).toLocaleLowerCase();
-                const aadhaar = faker.string.numeric({ length: 12, allowLeadingZeros: false });
-                // ensure uniqueness
-                if (usedEmails.has(email) || usedAadhaars.has(aadhaar)) { continue }
-                const id = generateUniqueUUID()
-                userIds.push(id)
-                usedEmails.add(email);
-                usedAadhaars.add(aadhaar);
-                usersArr.push({
-                    user_id: id,
-                    full_name: `${fname} ${lname}`,
-                    email,
-                    gender: genders[Math.floor(Math.random() * genders.length)] as GenderType,
-                    role: 'citizen' as RoleType,
-                    password: hassedPassword,
-                    contact_number: faker.string.numeric({ length: 10 }),
-                    date_of_birth: faker.date.past({ years: 20 }),
-                    profile_picture: faker.image.avatar(),
-                    aadhaar_number: aadhaar,
-                    address: addresseess[Math.floor(Math.random() * addresseess.length)],
-                });
-            }
+            });
+        }
+        await prisma.$transaction(async (tx) => {
             // push in db
             for (let i = 0; i < usersArr.length; i++) {
                 const address = await tx.address.create({
