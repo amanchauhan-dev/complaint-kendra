@@ -64,8 +64,6 @@ export const feedLocations = async () => {
     }
 };
 
-
-
 export const deleteCategory = async () => {
     try {
         await prisma.category.deleteMany({ where: {} })
@@ -121,6 +119,12 @@ export const feedUsers = async () => {
     const NUMBER_OF_USERS = 500;
     const userIds: string[] = []
     try {
+        await prisma.address.createMany({
+            data: addresseess.map(item => {
+                return { full_address: item.full_address, taluka_id: item.taluka_id }
+            })
+        })
+        const adressId = await prisma.address.findMany({ select: { address_id: true } })
         //   seed users
         const usedEmails = new Set<string>();
         const usedAadhaars = new Set<string>();
@@ -136,7 +140,7 @@ export const feedUsers = async () => {
             contact_number: faker.string.numeric({ length: 10 }),
             date_of_birth: faker.date.past({ years: 20 }),
             aadhaar_number: '12345678912',
-            address: addresseess[Math.floor(Math.random() * addresseess.length)],
+            address_id: adressId[Math.floor(Math.random() * adressId.length)].address_id,
         }];
         // create fake users
         while (usersArr.length < NUMBER_OF_USERS) {
@@ -161,23 +165,12 @@ export const feedUsers = async () => {
                 date_of_birth: faker.date.past({ years: 20 }),
                 profile_picture: faker.image.avatar(),
                 aadhaar_number: aadhaar,
-                address: addresseess[Math.floor(Math.random() * addresseess.length)],
+                address_id: adressId[Math.floor(Math.random() * adressId.length)].address_id,
             });
         }
-        await prisma.$transaction(async (tx) => {
-            // push in db
-            for (let i = 0; i < usersArr.length; i++) {
-                const address = await tx.address.create({
-                    data: {
-                        full_address: usersArr[i].address.full_address,
-                        taluka_id: usersArr[i].address.taluka_id
-                    }
-                })
-                await tx.user.create({
-                    data: { ...usersArr[i], address: undefined, address_id: address.address_id }
-                })
-            }
-        });
+        await prisma.user.createMany({
+            data: usersArr
+        })
 
         console.log("✅ users seeded successfully");
     } catch (error: any) {
@@ -186,7 +179,6 @@ export const feedUsers = async () => {
         await prisma.$disconnect();
     }
 };
-
 
 const addresseess = [
     {
