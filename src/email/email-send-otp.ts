@@ -7,10 +7,9 @@ export const emailSendOTP = async ({ otp, to }: { otp: string, to: string }): Pr
             process.env.NEXT_PUBLIC_SERVICE_ID!,
             process.env.NEXT_PUBLIC_EMAIL_VERIFY_TEMPLATE_ID!,
             {
-                from: process.env.NEXT_PUBLIC_APP_NAME,
                 brandName: process.env.NEXT_PUBLIC_APP_NAME,
                 otp: otp.toString(),
-                to: to.toString(),
+                to: to.toString()
             },
             process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY!
         )

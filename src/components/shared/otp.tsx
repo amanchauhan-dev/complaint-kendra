@@ -28,7 +28,7 @@ const FormSchema = z.object({
     }),
 })
 
-export function InputOTPForm({ callBack = () => { }, otpError = false, loading = false }: { callBack?: (x: string) => void; otpError?: boolean, loading?: boolean }) {
+export function InputOTPForm({ callBack = () => { }, otpError = false, loading = false, email = '' }: { callBack?: (x: string) => void; otpError?: boolean, loading?: boolean, email?: string }) {
     const form = useForm<z.infer<typeof FormSchema>>({
         resolver: zodResolver(FormSchema),
         defaultValues: {
@@ -49,6 +49,7 @@ export function InputOTPForm({ callBack = () => { }, otpError = false, loading =
                 <form onSubmit={form.handleSubmit(onSubmit)} className="w-2/3 space-y-6">
                     <div>
                         <h1 className="text-xl font-bold">Verify Your Account</h1>
+                        <p className="text-sm text-muted-foreground">{email}</p>
                         <p className="text-sm">Don&apos;t share code to someone else.</p>
                     </div>
                     <FormField

@@ -107,7 +107,7 @@ export function FormTab() {
                     <div className="my-4">
                         <Button onClick={() => setTab('signup')} type="button" size='icon'><ChevronLeft /></Button>
                     </div>
-                    <InputOTPForm loading={otpLoading} otpError={otpError} callBack={(x) => SaveData(x)} />
+                    <InputOTPForm email={form.getValues('email')} loading={otpLoading} otpError={otpError} callBack={(x) => SaveData(x)} />
                 </TabsContent>
             </Tabs>
         </div>

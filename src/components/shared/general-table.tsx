@@ -90,7 +90,7 @@ export function GeneralTable<T extends { [key: string]: any }>({
     const totalPages = Math.ceil(totalCount / pageSize);
 
     return (
-        <div className="w-full space-y-4">
+        <div className="w-full overflow-x-auto space-y-4">
             <div className="overflow-x-auto rounded-xl border">
                 <Table>
                     <TableHeader>

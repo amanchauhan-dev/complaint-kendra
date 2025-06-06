@@ -136,7 +136,7 @@ export const checkAuth = async (): Promise<GeneralResponse<UserSelectSchemaType>
         }
         const user = await prisma.user.findUnique({
             where: {
-                user_id: decoded.user_id
+                user_id: decoded.user_id, status: "active"
             },
             include: {
                 address: {
@@ -183,7 +183,7 @@ export const checkAuth = async (): Promise<GeneralResponse<UserSelectSchemaType>
 export const handleLogin = async ({ email, password }: LoginSchemaType): Promise<GeneralResponse<UserSelectSchemaType>> => {
     try {
         const user = await prisma.user.findUnique({
-            where: { email },
+            where: { email, status: "active" },
             include: {
                 address: {
                     include: {
@@ -205,7 +205,6 @@ export const handleLogin = async ({ email, password }: LoginSchemaType): Promise
             throw new Error("Invalid email or password")
         }
         const token = createLoginToken({ user_id: user.user_id, email: user.email, role: user.role })
-
             ; (await cookies()).set("auth_token", token, {
                 httpOnly: true,
                 secure: process.env.NODE_ENV === 'production',

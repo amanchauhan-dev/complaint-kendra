@@ -34,10 +34,8 @@ export const FetchAllDistrict = async ({
 }: FetchMultipleRequest & { search?: string }): Promise<FetchMultipleRespone<District[]>> => {
     try {
         const skip = (currentPage - 1) * pageSize;
-
         // Build Prisma `where` object dynamically
         const baseFilter: any = {};
-
         // Add search to filter
         if (search.trim().length > 0) {
             baseFilter.name = { contains: search.trim(), mode: 'insensitive' };
