@@ -15,9 +15,11 @@ import { ProgressBarLink } from "@/contexts/progress-bar-provider"
 import Logo from "@/components/shared/logo"
 import { quickLinks, supportLinks } from "./links"
 import React from "react"
+import { useAuth } from "@/hooks/use-auth"
 
 export default function Footer() {
     const { setTheme } = useTheme()
+    const { user_id } = useAuth()
     const path = usePathname()
     return (
         <footer className={cn("bg-background border-t mt-auto hide-resume", {
@@ -51,6 +53,9 @@ export default function Footer() {
                         <h3 className="text-sm font-semibold">Quick Links</h3>
                         <ul className="space-y-2">
                             {quickLinks.map(link => {
+                                if (link.isAuth && link.isAuth == true && !user_id) {
+                                    return null
+                                }
                                 return (
                                     <li key={link.href}>
                                         <ProgressBarLink href={link.href} className="text-sm text-muted-foreground hover:text-primary flex items-center">
@@ -69,6 +74,9 @@ export default function Footer() {
                         <h3 className="text-sm font-semibold">Support</h3>
                         <ul className="space-y-2">
                             {supportLinks.map(link => {
+                                if (link.isAuth && link.isAuth == true && !user_id) {
+                                    return null
+                                }
                                 return (
                                     <li key={link.href}>
                                         <ProgressBarLink href={link.href} className="text-sm text-muted-foreground hover:text-primary flex items-center">

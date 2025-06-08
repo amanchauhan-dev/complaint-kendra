@@ -92,22 +92,26 @@ export function MobileSheet() {
             </SheetTrigger>
             <SheetContent className='max-w-[300px]'>
                 <SheetHeader>
-                    <SheetTitle>Navigation</SheetTitle>
+                    <SheetTitle className='hidden'></SheetTitle>
+                    <Logo />
                 </SheetHeader>
                 <div>
-                    <ProgressBarLink showActive={false} href={'/'} callBack={() => setOpen(false)} className='flex gap-1 items-center hover:bg-muted transition-colors rounded-md'>
+                    {user_id && user && <ProgressBarLink showActive={false} href={'/'} callBack={() => setOpen(false)} className='flex gap-1 items-center hover:bg-muted transition-colors rounded-md'>
                         <Button size={'icon'} variant={'ghost'}>
-                            {user && <span><Avatar className="h-7 w-7 rounded-full">
+                            <span><Avatar className="h-7 w-7 rounded-full">
                                 <AvatarImage loading="lazy" src={user?.profile_picture || ''} alt={user?.full_name} className="object-center" />
                                 <AvatarFallback className="rounded-full bg-primary/90 dark:bg-primary/60 text-white">{
                                     user?.full_name?.charAt(0)
                                 }</AvatarFallback>
-                            </Avatar></span>}
+                            </Avatar></span>
                         </Button>
                         <h1>Profile</h1>
                     </ProgressBarLink>
-
+                    }
                     {NavigationList.map((link, index) => {
+                        if (link.isAuth && link.isAuth == true && !user_id) {
+                            return null
+                        }
                         return <MobileItme link={link} callBack={() => setOpen(false)} key={index} />
                     })}
                 </div>
@@ -128,11 +132,9 @@ export function MobileSheet() {
                         </>
                     ) :
                         <Button className="w-full" type='button' variant={'outline'} onClick={logout}>
-                            Logout    <LogOut />
+                            Logout <LogOut />
                         </Button>
                     }
-
-
                 </SheetFooter>
             </SheetContent>
         </Sheet>

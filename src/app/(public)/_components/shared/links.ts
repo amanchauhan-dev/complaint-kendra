@@ -2,12 +2,13 @@ import { CircleHelp, Contact, FileQuestion, FileText, Home, LucideIcon, MousePoi
 export type LinkType = {
     href: string;
     label: string;
-    icon?: LucideIcon
+    icon?: LucideIcon,
+    isAuth?: boolean,
 }
 export const NavigationList: LinkType[] = [
     { href: '/', label: 'Home', icon: Home },
     { href: '/faq', label: 'FAQs', icon: FileQuestion },
-    { href: '/file-complaint', label: 'File Complaint', icon: FileText },
+    { href: '/file-complaint', label: 'File Complaint', icon: FileText, isAuth: true },
     { href: '/contact-us', label: 'Contact', icon: Contact },
 ];
 
@@ -20,7 +21,7 @@ export const SocialLinks: LinkType[] = [
 export const quickLinks: LinkType[] = [
     { href: '/', label: 'Home', icon: Home },
     { href: '/faq', label: 'FAQs', icon: FileQuestion },
-    { href: '/file-complaint', label: 'File Complaint', icon: FileText },
+    { href: '/file-complaint', label: 'File Complaint', icon: FileText, isAuth: true },
     { href: '/contact-us', label: 'Contact', icon: Contact },
 ]
 export const supportLinks: LinkType[] = [
