@@ -100,7 +100,7 @@ export default function Footer() {
 
                 {/* Copyright */}
                 <div className="mt-12 pt-2 border-t text-sm text-muted-foreground text-center my-2">
-                    <div className="flex justify-center gap-2 items-center">© {new Date().getFullYear()} <Logo className={cn('text-sm')} /> . All rights reserved.</div>
+                    <div className="flex justify-center gap-2 flex-wrap items-center">© {new Date().getFullYear()} <Logo className={cn('text-[10px]')} showText={false} /> . All rights reserved.</div>
                 </div>
             </div>
         </footer>
