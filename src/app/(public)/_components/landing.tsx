@@ -84,7 +84,9 @@ export default function Landing() {
                     We believe in a transparent, responsive and inclusive administration. Complaint Kendra is your platform to make your voice heard.
                 </p>
                 <div className="mt-8">
-                    <Button size="lg">Start Now</Button>
+                    <ProgressBarLink href={'/file-complaint'}>
+                        <Button size="lg">Start Now</Button>
+                    </ProgressBarLink>
                 </div>
             </section>
         </main>
