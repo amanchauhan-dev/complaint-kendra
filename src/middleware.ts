@@ -29,7 +29,7 @@ export async function middleware(request: NextRequest) {
             return NextResponse.json({ success: false, error })
         }
     }
-    else if (request.nextUrl.pathname.startsWith('/api') && !request.nextUrl.pathname.startsWith('/api/auth')) {  // api validation: auth
+    else if (request.nextUrl.pathname.startsWith('/api') && !request.nextUrl.pathname.startsWith('/api/public') && !request.nextUrl.pathname.startsWith('/api/auth')) {  // api validation: auth
         try {
             const authHeader = request.headers.get('authorization') || ''
             const token = authHeader.replace(/^Bearer\s+/i, '')
