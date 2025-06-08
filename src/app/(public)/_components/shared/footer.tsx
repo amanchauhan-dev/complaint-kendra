@@ -4,9 +4,6 @@ import {
     Sun,
     Moon,
     Laptop,
-    Github,
-    Twitter,
-    Linkedin,
 } from "lucide-react"
 import { useTheme } from "next-themes"
 import { usePathname } from "next/navigation"
@@ -23,27 +20,36 @@ export default function Footer() {
     const path = usePathname()
     return (
         <footer className={cn("bg-background border-t mt-auto hide-resume", {
-            "hidden": path.startsWith('/builder')
+            "hidden": path.startsWith('/kendra-bot')
         })}>
             <div className="container px-4 pt-12 md:pt-16">
-                <div className="grid grid-cols-1 items-center md:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 items-center md:grid-cols-3  gap-8">
                     {/* Brand Info */}
                     <div className="space-y-4 md:mx-auto">
-                        <div className="flex items-center space-x-2">
-                            <Logo className={cn('md:text-xl')} />
-                        </div>
-                        <p className="text-sm text-muted-foreground">
-                            Build professional resumes in minutes. Free forever.
-                        </p>
-                        <div className="flex space-x-4">
-                            <Button variant="ghost" size="icon">
-                                <Github className="h-5 w-5" />
+                        <div className="flex flex-col space-y-2">
+                            <Button
+                                variant="ghost"
+                                className="justify-start"
+                                onClick={() => setTheme("light")}
+                            >
+                                <Sun className="mr-2 h-4 w-4" />
+                                Light Mode
                             </Button>
-                            <Button variant="ghost" size="icon">
-                                <Twitter className="h-5 w-5" />
+                            <Button
+                                variant="ghost"
+                                className="justify-start"
+                                onClick={() => setTheme("dark")}
+                            >
+                                <Moon className="mr-2 h-4 w-4" />
+                                Dark Mode
                             </Button>
-                            <Button variant="ghost" size="icon">
-                                <Linkedin className="h-5 w-5" />
+                            <Button
+                                variant="ghost"
+                                onClick={() => setTheme("system")}
+                                className="justify-start"
+                            >
+                                <Laptop className="mr-2 h-4 w-4" />
+                                System Preference
                             </Button>
                         </div>
                     </div>
@@ -89,36 +95,7 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    {/* Theme Switcher */}
-                    <div className="space-y-3 md:mx-auto">
-                        <h3 className="text-sm font-semibold">Appearance</h3>
-                        <div className="flex flex-col space-y-2">
-                            <Button
-                                variant="ghost"
-                                className="justify-start"
-                                onClick={() => setTheme("light")}
-                            >
-                                <Sun className="mr-2 h-4 w-4" />
-                                Light Mode
-                            </Button>
-                            <Button
-                                variant="ghost"
-                                className="justify-start"
-                                onClick={() => setTheme("dark")}
-                            >
-                                <Moon className="mr-2 h-4 w-4" />
-                                Dark Mode
-                            </Button>
-                            <Button
-                                variant="ghost"
-                                onClick={() => setTheme("system")}
-                                className="justify-start"
-                            >
-                                <Laptop className="mr-2 h-4 w-4" />
-                                System Preference
-                            </Button>
-                        </div>
-                    </div>
+
                 </div>
 
                 {/* Copyright */}

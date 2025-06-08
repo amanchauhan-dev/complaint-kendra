@@ -37,8 +37,8 @@ export default function Landing() {
                 </motion.div>
             </section>
 
-            <section className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl w-full">
-                <Card className="rounded-2xl shadow-md">
+            <section className="mt-16 flex flex-wrap gap-6 max-w-5xl w-full justify-center">
+                <Card className="rounded-2xl shadow-md max-w-78">
                     <CardContent className="p-6 space-y-4">
                         <ShieldCheck className="w-10 h-10 text-primary" />
                         <h3 className="text-xl font-semibold">Secure & Transparent</h3>
@@ -48,7 +48,7 @@ export default function Landing() {
                         <Badge variant="outline">Verified by Govt. of Gujarat</Badge>
                     </CardContent>
                 </Card>
-                <Card className="rounded-2xl shadow-md">
+                <Card className="rounded-2xl shadow-md max-w-78">
                     <CardContent className="p-6 space-y-4">
                         <MapPin className="w-10 h-10 text-primary" />
                         <h3 className="text-xl font-semibold">District-level Access</h3>
@@ -58,7 +58,7 @@ export default function Landing() {
                         <Badge variant="outline">Location Intelligent</Badge>
                     </CardContent>
                 </Card>
-                <Card className="rounded-2xl shadow-md">
+                <Card className="rounded-2xl shadow-md max-w-78">
                     <CardContent className="p-6 space-y-4">
                         <Mail className="w-10 h-10 text-primary" />
                         <h3 className="text-xl font-semibold">Email Notifications</h3>

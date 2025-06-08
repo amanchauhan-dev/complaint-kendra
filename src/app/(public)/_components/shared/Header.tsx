@@ -24,7 +24,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 export default function Header() {
     const { user_id, role } = useAuth()
     return (
-        <header className="w-full border-b bg-background shadow-sm  sticky top-0 z-50 h-[50px] flex justify-center px-4 md:px-20">
+        <header className="w-full border-b bg-background shadow-sm sticky top-0 z-50 flex justify-center px-4 md:px-20 py-2" >
             <div className="container mx-auto flex items-center justify-between">
                 {/* Logo and Title */}
                 <ProgressBarLink showActive={false} href="/" className="text-lg md:text-xl font-bold flex items-center gap-2">
