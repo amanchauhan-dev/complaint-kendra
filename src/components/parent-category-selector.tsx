@@ -10,14 +10,17 @@ function ParentCategorySelector({ parentCategory = null, setParentCategory, clas
     const [data, setData] = useState<Category[]>([])
     const [search, setSearch] = useState<string>('')
     const searchDebounce = useDebounce(search, 500);
+    const [loading, setLoading] = useState<boolean>(true)
 
     const fetch = async () => {
+        setLoading(true)
         const res = await FetchAllCategory({ pageSize: 50, currentPage: 1, sortField: 'name', sortOrder: "asc", search: searchDebounce })
         if (res.success && res.data) {
             setData(res.data)
         } else {
             setData([])
         }
+        setLoading(false)
     }
     const onChangeData = (item: Category | null) => {
         if (item) {
@@ -46,6 +49,7 @@ function ParentCategorySelector({ parentCategory = null, setParentCategory, clas
             lable='Select Category'
             className={className}
             changedData={parentCategory}
+            loading={loading}
         />
     )
 }

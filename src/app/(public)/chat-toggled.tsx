@@ -26,7 +26,7 @@ function ChatToggled() {
                     <Bot />
                 </Button>
             </ProgressBarLink>
-            <div className={cn(' sticky right-0 top-0 transition-all flex-nowrap duration-500 hidden lg:flex border-l-2 rounded-lg', {
+            <div className={cn(' sticky right-0 top-0 transition-all flex-nowrap duration-500 hidden lg:flex border-l-2 rounded-lg overflow-hidden', {
                 "w-0": !toggled,
                 "w-[450px]": toggled,
                 "!hidden": path.startsWith('/kendra-bot')

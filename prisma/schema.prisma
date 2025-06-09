@@ -66,16 +66,18 @@ model District {
   updated_at   DateTime      @default(now())
   subdivisions Subdivision[]
   Taluka       Taluka[]
+  departments  Department[]
 }
 
 model Subdivision {
-  subdivision_id String   @id @default(uuid())
+  subdivision_id String       @id @default(uuid())
   district_id    String
   name           String
-  created_at     DateTime @default(now())
-  updated_at     DateTime @default(now())
-  district       District @relation(fields: [district_id], references: [district_id], onDelete: Cascade)
+  created_at     DateTime     @default(now())
+  updated_at     DateTime     @default(now())
+  district       District     @relation(fields: [district_id], references: [district_id], onDelete: Cascade)
   talukas        Taluka[]
+  departments    Department[]
 }
 
 model Taluka {
@@ -89,6 +91,7 @@ model Taluka {
   district       District     @relation(fields: [district_id], references: [district_id], onDelete: Cascade)
   subdivision    Subdivision? @relation(fields: [subdivision_id], references: [subdivision_id], onDelete: Cascade)
   Address        Address[]
+  departments    Department[]
 }
 
 model User {
@@ -135,6 +138,10 @@ model Department {
   updated_at         DateTime          @default(now())
   officers           Officer[]
   Complaint          Complaint[]
+
+  district    District?    @relation(fields: [jurisdiction_id], references: [district_id], map: "Department_jurisdiction_id_district_fkey")
+  subdivision Subdivision? @relation(fields: [jurisdiction_id], references: [subdivision_id], map: "Department_jurisdiction_id_subdivision_fkey")
+  taluka      Taluka?      @relation(fields: [jurisdiction_id], references: [taluka_id], map: "Department_jurisdiction_id_taluka_fkey")
 }
 
 model Officer {

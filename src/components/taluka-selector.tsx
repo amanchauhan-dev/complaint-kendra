@@ -23,6 +23,7 @@ function TalukaSelector({
     clearCallBack?: () => void;
     className?: string
 }) {
+    const [loading, setLoading] = useState<boolean>(true)
     const [data, setData] = useState<Taluka[]>([])
     const [search, setSearch] = useState<string>('')
     const searchDebounce = useDebounce(search, 500);
@@ -33,6 +34,7 @@ function TalukaSelector({
 
     useEffect(() => {
         const fetch = async () => {
+            setLoading(true)
             const where = []
 
             if (district_id?.trim().length > 0) {
@@ -53,6 +55,7 @@ function TalukaSelector({
             } else {
                 setData([])
             }
+            setLoading(false)
         }
 
         fetch()
@@ -71,6 +74,7 @@ function TalukaSelector({
             disable={disable}
             lable='Select Taluka'
             clearCallBack={clearCallBack}
+            loading={loading}
         />
     )
 }

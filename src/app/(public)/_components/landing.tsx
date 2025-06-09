@@ -6,8 +6,10 @@ import { Badge } from "@/components/ui/badge";
 import { Mail, ShieldCheck, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 import { ProgressBarLink } from "@/contexts/progress-bar-provider";
+import { useAuth } from "@/hooks/use-auth";
 
 export default function Landing() {
+    const { user_id } = useAuth()
     return (
         <main className="min-h-screen w-full  flex flex-col items-center px-4 py-8 md:py-16">
             <section className="max-w-5xl w-full text-center space-y-6">
@@ -33,7 +35,8 @@ export default function Landing() {
                     transition={{ delay: 0.4 }}
                     className="flex flex-col sm:flex-row gap-4 justify-center"
                 >
-                    <ProgressBarLink href={'/file-complaint'}><Button size="lg">File a Complaint</Button></ProgressBarLink>
+                    {user_id ? <ProgressBarLink href={'/file-complaint'}><Button size="lg">File a Complaint</Button></ProgressBarLink> :
+                        <ProgressBarLink href={'/login'}><Button size="lg">File a Complaint</Button></ProgressBarLink>}
                 </motion.div>
             </section>
 
@@ -84,9 +87,11 @@ export default function Landing() {
                     We believe in a transparent, responsive and inclusive administration. Complaint Kendra is your platform to make your voice heard.
                 </p>
                 <div className="mt-8">
-                    <ProgressBarLink href={'/file-complaint'}>
+                    {user_id ? <ProgressBarLink href={'/file-complaint'}>
                         <Button size="lg">Start Now</Button>
-                    </ProgressBarLink>
+                    </ProgressBarLink> : <ProgressBarLink href={'/login'}>
+                        <Button size="lg">Start Now</Button>
+                    </ProgressBarLink>}
                 </div>
             </section>
         </main>

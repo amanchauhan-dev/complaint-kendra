@@ -1,21 +1,7 @@
 "use client"
 
 import * as React from "react"
-// import {
-// IconCamera,
-// IconDatabase,
-// IconFileAi,
-// IconFileDescription,
-//     IconFileWord,
-//     IconHelp,
-//     IconReport,
-//     IconSearch,
-//     IconSettings,
-// } from "@tabler/icons-react"
-
-import { NavDocuments } from "./nav-documents"
 import { NavMain } from "./nav-main"
-import { NavSecondary } from "./nav-secondary"
 import { NavUser } from "./nav-user"
 import {
     Sidebar,
@@ -27,7 +13,7 @@ import {
     SidebarMenuItem,
 } from "@/components/ui/sidebar"
 import Logo from "@/components/shared/logo"
-import { FileText, Grid2X2, MapPin, Shapes, User } from "lucide-react"
+import { FileText, Grid2X2, MapPin, Shapes, User, Warehouse } from "lucide-react"
 import { ProgressSideBarLink } from "@/contexts/progress-bar-provider"
 
 const data = {
@@ -47,6 +33,21 @@ const data = {
             icon: User
         },
         {
+            title: "Department & Officers",
+            url: "/dashboard/departments-officers",
+            icon: Warehouse,
+            items: [
+                {
+                    title: "Departments",
+                    url: "/dashboard/departments-officers/departments",
+                },
+                {
+                    title: "Officers",
+                    url: "/dashboard/departments-officers/officers",
+                }
+            ],
+        },
+        {
             title: "Categories",
             url: "#",
             icon: Shapes,
@@ -61,8 +62,6 @@ const data = {
                 },
             ],
         },
-
-
         {
             title: "Locations",
             url: "/dashboard/locations",
@@ -82,111 +81,12 @@ const data = {
                 },
             ],
         },
-        // {
-        //     title: "Settings",
-        //     url: "#",
-        //     icon: Settings2,
-        //     items: [
-        //         {
-        //             title: "General",
-        //             url: "#",
-        //         },
-        //         {
-        //             title: "Team",
-        //             url: "#",
-        //         },
-        //         {
-        //             title: "Billing",
-        //             url: "#",
-        //         },
-        //         {
-        //             title: "Limits",
-        //             url: "#",
-        //         },
-        //     ],
-        // },
     ],
     navClouds: [
-        // {
-        //     title: "Capture",
-        //     icon: IconCamera,
-        //     isActive: true,
-        //     url: "#",
-        //     items: [
-        //         {
-        //             title: "Active Proposals",
-        //             url: "#",
-        //         },
-        //         {
-        //             title: "Archived",
-        //             url: "#",
-        //         },
-        //     ],
-        // },
-        // {
-        //     title: "Proposal",
-        //     icon: IconFileDescription,
-        //     url: "#",
-        //     items: [
-        //         {
-        //             title: "Active Proposals",
-        //             url: "#",
-        //         },
-        //         {
-        //             title: "Archived",
-        //             url: "#",
-        //         },
-        //     ],
-        // },
-        // {
-        //     title: "Prompts",
-        //     icon: IconFileAi,
-        //     url: "#",
-        //     items: [
-        //         {
-        //             title: "Active Proposals",
-        //             url: "#",
-        //         },
-        //         {
-        //             title: "Archived",
-        //             url: "#",
-        //         },
-        //     ],
-        // },
     ],
     navSecondary: [
-        // {
-        //     title: "Settings",
-        //     url: "#",
-        //     icon: IconSettings,
-        // },
-        // {
-        //     title: "Get Help",
-        //     url: "#",
-        //     icon: IconHelp,
-        // },
-        // {
-        //     title: "Search",
-        //     url: "#",
-        //     icon: IconSearch,
-        // },
     ],
     documents: [
-        // {
-        //     name: "Data Library",
-        //     url: "#",
-        //     icon: IconDatabase,
-        // },
-        // {
-        //     name: "Reports",
-        //     url: "#",
-        //     icon: IconReport,
-        // },
-        // {
-        //     name: "Word Assistant",
-        //     url: "#",
-        //     icon: IconFileWord,
-        // },
     ],
 }
 
@@ -209,8 +109,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             </SidebarHeader>
             <SidebarContent>
                 <NavMain items={data.navMain} />
-                <NavDocuments items={data.documents} />
-                <NavSecondary items={data.navSecondary} className="mt-auto" />
+                {/* <NavDocuments items={data.documents} />
+                <NavSecondary items={data.navSecondary} className="mt-auto" /> */}
             </SidebarContent>
             <SidebarFooter>
                 <NavUser />

@@ -32,10 +32,15 @@ export const UserRowSchema = UserSchema.extend({
 export type UserRowSchemaType = z.infer<typeof UserRowSchema>
 
 
+
 export const UserSelectSchema = UserSchema.extend({
     password: z.string().optional(),
     address: AddressSelectSchema.nullable()
 })
+
+
+export const UserSingleSelect = UserSchema.omit({ password: true })
+export type UserSingleSelectType = z.infer<typeof UserSingleSelect>
 
 export const UserSelectMultipleSchema = UserSelectSchema.omit({
     password: true

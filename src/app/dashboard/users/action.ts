@@ -2,8 +2,8 @@
 import { UploadProfile } from "@/lib/cloudinary";
 import { prisma } from "@/lib/prisma";
 import { FetchMultipleRequest, FetchMultipleRespone, GeneralResponse } from "@/lib/server-types";
-import { GenderType } from "@/validations/enums";
-import { CreateUserSchemaType, UpdateUserSchemaType, UserSelectMultipleSchemaType, UserSelectSchemaType } from "@/validations/models/user-validation";
+import { GenderType, RoleType } from "@/validations/enums";
+import { CreateUserSchemaType, UpdateUserSchemaType, UserSelectMultipleSchemaType, UserSelectSchemaType, UserSingleSelectType } from "@/validations/models/user-validation";
 import { Prisma } from "@prisma/client";
 import bcrypt from "bcryptjs";
 
@@ -149,6 +149,33 @@ export const FetchAllUser = async ({
     }
 };
 
+//  fetch user by email 
+
+export const FetchUserByEmail = async ({ email, role = "citizen" }: { email: string, role?: RoleType }): Promise<GeneralResponse<UserSingleSelectType>> => {
+    try {
+        const user = await prisma.user.findUnique({
+            where: { email, role: role }
+        })
+        if (user) {
+            return {
+                success: true,
+                data: { ...user }
+            }
+        }
+        return {
+            success: false,
+            error: 'User not found'
+        }
+    } catch (error: any) {
+        console.log('Error: fetching user by email');
+        return {
+            success: false,
+            error: error.message || 'Failed to fetch user'
+        }
+
+    }
+}
+
 // <================================== Update One ==============================>
 
 
@@ -179,6 +206,7 @@ export const UpdateUser = async (user: UpdateUserSchemaType): Promise<GeneralRes
                 contact_number: user.contact_number,
                 date_of_birth: new Date(user.date_of_birth),
                 gender: user.gender as GenderType,
+                updated_at: new Date(),
                 ...role,
                 address: {
                     create: {

@@ -19,7 +19,7 @@ import { Taluka } from '@/validations/models/taluka-validation'
 import Image from 'next/image'
 import { Label } from '@/components/ui/label'
 import { Edit2, ImagePlus, RotateCcw } from 'lucide-react'
-
+import { format } from "date-fns"
 
 function UserUpdate({ data, setOpen }: { data: UserSelectSchemaType, setOpen: (x: boolean) => void }) {
     const { refresh } = useUser()
@@ -39,7 +39,6 @@ function UserUpdate({ data, setOpen }: { data: UserSelectSchemaType, setOpen: (x
         subdivision_id: ""
     })
     const [loading, setLoading] = useState<boolean>(false)
-
     const form = useForm<UpdateUserSchemaType>({
         resolver: zodResolver(UpdateUserSchema),
         defaultValues: {
@@ -49,7 +48,7 @@ function UserUpdate({ data, setOpen }: { data: UserSelectSchemaType, setOpen: (x
             full_name: data.full_name,
             email: data.email,
             contact_number: data.contact_number,
-            date_of_birth: data.date_of_birth.toDateString(),
+            date_of_birth: format(new Date(data.date_of_birth), "yyyy-MM-dd"),
             profile_picture: null,
             old_picture: data.profile_picture || null,
             aadhaar_number: data.aadhaar_number,
@@ -169,7 +168,7 @@ function UserUpdate({ data, setOpen }: { data: UserSelectSchemaType, setOpen: (x
                                     <FormItem>
                                         <FormLabel>Date Of Birth</FormLabel>
                                         <FormControl>
-                                            <Input type="date" placeholder='Enter your date of birth' {...field} value={field?.value?.toString().substring(0, 10)} />
+                                            <Input type="date" placeholder='Enter your date of birth' {...field} />
                                         </FormControl>
                                         <FormDescription>As per your Adhar Card.</FormDescription>
                                         <FormMessage />

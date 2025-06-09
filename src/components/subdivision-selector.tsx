@@ -21,6 +21,7 @@ function SubdivionSelector({
     clearCallBack?: () => void;
     className?: string;
 }) {
+    const [loading, setLoading] = useState<boolean>(true)
     const [data, setData] = useState<Subdivision[]>([])
     const [search, setSearch] = useState<string>('')
     const searchDebounce = useDebounce(search, 500);
@@ -31,6 +32,7 @@ function SubdivionSelector({
 
     useEffect(() => {
         const fetch = async () => {
+            setLoading(true)
             const where = [];
             if (district_id?.trim().length > 0) {
                 where.push({ key: "district_id", value: district_id });
@@ -50,6 +52,7 @@ function SubdivionSelector({
             } else {
                 setData([]);
             }
+            setLoading(false)
         };
 
         fetch();
@@ -67,6 +70,7 @@ function SubdivionSelector({
             lable="Select Subdivision"
             clearCallBack={clearCallBack}
             disable={disable}
+            loading={loading}
             className={className}
         />
     )

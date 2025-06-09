@@ -169,7 +169,7 @@ function UserTable() {
             [
               { name: "All", value: "all" },
               { name: "Cirizen", value: "citizen" },
-              { name: "Mamladar Officer", value: "department_officer" },
+              { name: "Department Officer", value: "department_officer" },
               { name: "Mamlatdar Officer", value: "mamlatdar_office" },
               { name: "Subdivision Officer", value: "sdm_office" },
               { name: "Collectorate Officer", value: "collectorate_office" },

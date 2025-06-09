@@ -10,14 +10,17 @@ function DistrictSelector({ setDistrict, district = null, className, disable, cl
     const [data, setData] = useState<District[]>([])
     const [search, setSearch] = useState<string>('')
     const searchDebounce = useDebounce(search, 500);
+    const [loading, setLoading] = useState<boolean>(true)
 
     const fetch = async () => {
+        setLoading(true)
         const res = await FetchAllDistrict({ pageSize: 50, currentPage: 1, sortField: 'name', sortOrder: "asc", search: searchDebounce })
         if (res.success && res.data) {
             setData(res.data)
         } else {
             setData([])
         }
+        setLoading(false)
     }
     const onChangeData = (item: District | null) => {
         if (item) {
@@ -46,6 +49,7 @@ function DistrictSelector({ setDistrict, district = null, className, disable, cl
             lable='Select District'
             className={className}
             changedData={district}
+            loading={loading}
         />
     )
 }
