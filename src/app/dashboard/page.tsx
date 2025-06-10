@@ -1,7 +1,7 @@
 import { ChartAreaInteractive } from "./_components/chart-area-interactive"
-import { DataTable } from "./_components/data-table"
+// import { DataTable } from "./_components/data-table"
 import { SectionCards } from "./_components/section-cards"
-import data from "./data.json"
+// import data from "./data.json"
 import AIBox from "./_components/ai-box"
 
 export default function Page() {
@@ -13,7 +13,7 @@ export default function Page() {
                     <ChartAreaInteractive />
                     <AIBox />
                 </div>
-                <DataTable data={data} />
+                {/* <DataTable data={data} /> */}
             </div>
         </div>
     )

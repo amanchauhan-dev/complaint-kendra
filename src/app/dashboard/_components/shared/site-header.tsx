@@ -1,12 +1,11 @@
 'use client'
 import { ModeToggle } from "@/components/shared/mode-toggle"
 import Profile from "@/components/shared/profile"
-import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import { ProgressBarLink } from "@/contexts/progress-bar-provider"
-import { Home, Mail } from "lucide-react"
+import { Home } from "lucide-react"
 import { usePathname } from "next/navigation"
 import { useCallback } from "react"
 
@@ -30,13 +29,6 @@ export function SiteHeader() {
                     <ProgressBarLink href={'/'} title="Go To Home Page">
                         <Button size='icon' variant={'ghost'}>
                             <Home />
-                        </Button>
-                    </ProgressBarLink>
-
-                    <ProgressBarLink href={'/dashboard/emails'} title="Go To Home Page">
-                        <Button size='icon' variant={'outline'} className="relative">
-                            <Badge className="absolute bg-secondary text-primary w-5 h-5 rounded-full -right-1 -top-1">2</Badge>
-                            <Mail />
                         </Button>
                     </ProgressBarLink>
                     <ModeToggle />

@@ -10,6 +10,7 @@ import { useAuth } from "@/hooks/use-auth";
 
 export default function Landing() {
     const { user_id } = useAuth()
+
     return (
         <main className="min-h-screen w-full  flex flex-col items-center px-4 py-8 md:py-16">
             <section className="max-w-5xl w-full text-center space-y-6">
