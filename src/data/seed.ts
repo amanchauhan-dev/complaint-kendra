@@ -141,6 +141,7 @@ export const feedUsers = async () => {
             date_of_birth: faker.date.past({ years: 20 }),
             aadhaar_number: '12345678912',
             address_id: adressId[Math.floor(Math.random() * adressId.length)].address_id,
+            created_at: new Date()
         }];
         // create fake users
         while (usersArr.length < NUMBER_OF_USERS) {
@@ -166,6 +167,7 @@ export const feedUsers = async () => {
                 profile_picture: faker.image.avatar(),
                 aadhaar_number: aadhaar,
                 address_id: adressId[Math.floor(Math.random() * adressId.length)].address_id,
+                created_at: faker.date.past({ years: 1 })
             });
         }
         await prisma.user.createMany({
@@ -250,7 +252,8 @@ export const feedComplaints = async () => {
             comapliants.push({
                 title: faker.lorem.sentence({ min: 4, max: 8 }),
                 description: faker.lorem.paragraphs({ min: 5, max: 10 }),
-                attachments: [faker.image.urlPicsumPhotos(), faker.image.urlPicsumPhotos()]
+                attachments: [faker.image.urlPicsumPhotos(), faker.image.urlPicsumPhotos()],
+                created_at: faker.date.past({ years: 1 })
             });
         }
 
