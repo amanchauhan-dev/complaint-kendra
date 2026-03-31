@@ -31,6 +31,7 @@ Built using:
 ---
 
 # 🧩 Architecture Summary
+![Architecture Flow Chart](diagram.png)
 
 The system follows a **full-stack Next.js architecture**.
 
